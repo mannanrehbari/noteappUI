@@ -1,0 +1,25 @@
+.sheet-container {
+    padding: 2em;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.overflow-detail-wrap {
+    overflow-wrap: break-word;
+}
+
+
+::ng-deep .mat-line {
+    word-wrap  : break-word !important;
+    white-space: pre-wrap !important;
+}
+
+::ng-deep .mat-list .mat-list-item {
+    height: initial !important;
+}

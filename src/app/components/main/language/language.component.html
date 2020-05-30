@@ -1,0 +1,66 @@
+<div class="jumbotron">
+    <h1 class="display-4"> Hello!</h1>
+    <p class="lead">The purpose of this website to track personalized learning of programming languages, frameworks, and
+        other general technical topics. </p>
+    <hr class="my-2">
+    <p>Notiz platform allows you to learn these topics in modules. Modules are clusters of atomic topics.
+        You can mark the topics inside each module as learned or not.
+    </p>
+</div>
+
+<div class="container">
+
+    <div class="card text-center" *ngFor="let lang of languages">
+        <div class="card-header">
+            <h1 class="htitle">{{lang.name}}</h1>
+
+            <span class="spacer"></span>
+
+
+            <mat-chip-list>
+                <mat-chip disabled>
+                    dev votes
+                </mat-chip>
+                <mat-chip>
+                    {{lang.votes}}
+                </mat-chip>
+            </mat-chip-list>
+
+
+        </div>
+
+        <div class="card-body">
+            <h2 class="card-title">{{lang.header}} </h2>
+            <p class="card-text">{{lang.details}}</p>
+
+            <section>
+                <div class="lang-button-row">
+
+                    <button mat-raised-button color="primary" (click)="onSelect(lang)">
+                        Modules
+                    </button>
+
+                    <span class="spacer"></span>
+                    <span class="spacer"></span>
+
+                    <button mat-stroked-button color="primary" (click)="voteUp(lang.id)">
+                        <mat-icon>thumb_up_alt</mat-icon>
+                    </button>
+
+                    <button mat-stroked-button color="warn" (click)="voteDown(lang.id)">
+                        <mat-icon>thumb_down_alt</mat-icon>
+                    </button>
+
+                </div>
+
+            </section>
+
+
+        </div>
+        <div class="card-footer text-muted">
+            This panel will show some statistics when we have enough data
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,50 @@
+.mod-button-row,
+.chip-row{
+    display: inline-block;
+
+}
+
+.spacer{
+    padding-left: 10em;
+}
+.single-spacer{
+    padding-left: 1em;
+}
+
+.block-spacer{
+    padding-left: 5em;
+}
+.single-spacer{
+    padding-left: 1em;
+}
+
+.card-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.htitle{
+    padding-top: 15px;
+}
+.right-spacer{
+    flex: 1 1 auto;
+}
+.modules-actions{
+    padding: 0 2em;
+}
+.module-navigation{
+    background-color: #eeeeee;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+
+.card{
+    margin-top: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
+}
+
+.material-status-icons{
+    padding-left: 1em;
+}

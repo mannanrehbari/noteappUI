@@ -1,0 +1,36 @@
+<div class="sheet-container">
+    <!--
+        flex: 1 1 auto;
+    -->
+    <div class="sheet-header">
+
+        <span class="float-left">
+            <button mat-stroked-button color="primary">
+                <span class="material-icons">
+                    memory
+                </span>
+                {{modBlock.mbName}}
+            </button>
+        </span>
+        <span class="float-right">
+            <mat-slide-toggle [checked]="modBlock.status" (change)="changeStatus()" color="primary">
+            </mat-slide-toggle>
+        </span>
+        <br>
+        <br><br>
+        <mat-divider></mat-divider>
+    </div>
+    <br>
+
+    <div class="sheet-body">
+
+        <!--mat expansion list-->
+    </div>
+
+
+
+
+
+
+
+</div>

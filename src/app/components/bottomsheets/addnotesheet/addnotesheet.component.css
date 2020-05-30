@@ -1,0 +1,19 @@
+.sheet-container {
+    padding: 2em;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.note-form {
+    width: 100%;
+}
+.note-textarea{
+    width: inherit;
+}
+

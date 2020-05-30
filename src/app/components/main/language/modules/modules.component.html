@@ -1,0 +1,117 @@
+<div class="container">
+    <br>
+    <mat-toolbar class="module-navigation">
+        <mat-toolbar-row>
+            <span>
+                <button mat-stroked-button (click)="goBack()">
+                    <span class="material-icons">
+                        keyboard_arrow_left
+                    </span>
+                    Back
+                </button>
+            </span>
+            <span class="right-spacer"></span>
+            <button mat-stroked-button color="primary" disabled>
+                <span class="material-icons">
+                    library_add
+                </span>
+                Add Module
+            </button>
+            <button mat-stroked-button color="accent" (click)="openStatsDialog()">
+                <span class="material-icons">
+                    insert_chart_outlined
+                </span>
+                statistics
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <br>
+
+    <div class="card text-center" *ngFor="let module of moduleList">
+        <div class="card-header">
+            <h1 class="htitle"> {{module.modName}}</h1>
+
+            <span class="spacer"></span>
+            <section>
+                <div class="lang-button-row">
+
+                    <span class="spacer"></span>
+                    <span class="spacer"></span>
+
+                    <button mat-stroked-button color="primary" disabled >
+                        <mat-icon>add_box</mat-icon>
+                        New block
+                    </button>
+                    <span class="single-spacer"></span>
+
+                    <button mat-stroked-button color="primary" (click)="voteUp(module.modId)">
+                        <mat-icon>thumb_up_alt</mat-icon>
+                    </button>
+
+                    <button mat-stroked-button color="warn" (click)="voteDown(module.modId)">
+                        <mat-icon>thumb_down_alt</mat-icon>
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <mat-chip-list>
+                <mat-chip disabled>
+                    dev votes
+                </mat-chip>
+                <mat-chip>
+                    {{module.modVotes}}
+                </mat-chip>
+            </mat-chip-list>
+
+        </div>
+
+        <div class="card-body">
+            <h2 class="card-title">{{module.modHeader}} </h2>
+            <p class="card-text">{{module.modDescription}}</p>
+
+
+
+            <!-- Ideas module -->
+            <mat-divider></mat-divider>
+            <br>
+            <section>
+                <div class="mod-button-row" *ngFor="let modblock of module.modBlocks">
+                    <button mat-stroked-button color="primary" *ngIf="modblock.status === true"
+                        (click)="showDetails(modblock)">
+                        {{modblock.mbName}}
+                    </button>
+                    <button mat-stroked-button color="primary" *ngIf="modblock.status === true"
+                        (click)="showBottomSheet(modblock)">
+                        <span class="material-icons">
+                            done
+                        </span>
+                    </button>
+
+
+                    <button mat-stroked-button color="accent" *ngIf="modblock.status === false"
+                        (click)="showDetails(modblock)">
+                        {{modblock.mbName}}
+                    </button>
+                    <button mat-stroked-button color="accent" *ngIf="modblock.status === false"
+                        (click)="showBottomSheet(modblock)">
+                        <span class="material-icons">
+                            hourglass_empty
+                        </span>
+                    </button>
+                    <span class="block-spacer"></span>
+                </div>
+            </section>
+            <!-- End Ideas module -->
+
+
+        </div>
+        <div class="card-footer text-muted">
+            This panel will show some statistics when we have enough data
+        </div>
+    </div>
+
+
+</div>

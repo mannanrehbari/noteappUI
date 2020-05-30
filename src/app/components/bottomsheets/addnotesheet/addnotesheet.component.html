@@ -1,0 +1,75 @@
+<div class="sheet-container">
+    <!--
+        flex: 1 1 auto;
+    -->
+    <div class="sheet-header">
+
+        <span class="float-left">
+            <button mat-stroked-button color="primary" >
+                <span class="material-icons">
+                    view_list
+                </span>
+                Add note to: {{modblock.mbName}}
+            </button>
+        </span>
+        <span class="float-right">
+            <button mat-stroked-button color="accent" (click)="closeSheet()">
+                <span class="material-icons">
+                    cancel
+                </span>
+                Close
+            </button>
+            <button mat-stroked-button color="primary" (click)="saveNote()" *ngIf="!editMode">
+                <span class="material-icons">
+                    add_box
+                </span>
+                Save
+            </button>
+            <button mat-stroked-button color="primary" (click)="saveEditedNote()" *ngIf="editMode">
+                <span class="material-icons">
+                    add_box
+                </span>
+                Save
+            </button>
+        </span>
+        <br>
+        <br><br>
+        <mat-divider></mat-divider>
+
+        <div class="jumbotron" *ngIf="!editMode">
+            <div class="note-form">
+                <button mat-stroked-button color="primary">Tag</button>
+                <br>
+                <input type="text" [ngModel]="note.noteTag" (ngModelChange)="note.noteTag = $event" class="note-form">
+                <br>
+                <br>
+                <br>
+                <button mat-stroked-button color="primary">Details</button>
+                <br>
+                <textarea [ngModel]="note.noteDetail" (ngModelChange)="note.noteDetail = $event" class="note-form"> </textarea>
+            </div>
+          </div>
+          <div class="jumbotron" *ngIf="editMode">
+            <div class="note-form">
+                <button mat-stroked-button color="primary">Tag</button>
+                <br>
+                <input type="text" [ngModel]="editNote.noteTag" (ngModelChange)="editNote.noteTag = $event" class="note-form">
+                <br>
+                <br>
+                <br>
+                <button mat-stroked-button  color="primary">Details</button>
+                <br>
+                <textarea [ngModel]="editNote.noteDetail" (ngModelChange)="editNote.noteDetail = $event" class="note-form"> </textarea>
+            </div>
+          </div>
+
+    </div>
+    <br>
+
+    <div class="sheet-body">
+
+        <!--mat expansion list-->
+    </div>
+
+
+</div>

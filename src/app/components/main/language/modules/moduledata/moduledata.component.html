@@ -1,0 +1,116 @@
+<div class="container" *ngIf="dataLoaded">
+
+    <br>
+    <mat-toolbar class="module-navigation">
+        <mat-toolbar-row>
+            <span>
+                <button mat-stroked-button (click)="goBack()">
+                    <span class="material-icons">
+                        keyboard_arrow_left
+                    </span>
+                    Back
+                </button>
+            </span>
+            <span class="right-spacer"></span>
+            <button mat-stroked-button color="primary" (click)="showAddNoteSheet()">
+                <span class="material-icons">
+                    note_add
+                </span>
+                Add Note
+            </button>
+            <button mat-stroked-button color="primary" (click)="showAddLinkSheet()" disabled>
+                <span class="material-icons">
+                    link
+                </span>
+                Add Link
+            </button>
+            <button mat-stroked-button color="accent" (click)="downloadPDF()">
+                <span class="material-icons">
+                    picture_as_pdf
+                </span>
+                Save as PDF
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <br>
+
+
+
+
+
+    <div class="card text-center">
+        <div class="card-header">
+            <h1 class="htitle"> {{modblock.mbName}}</h1>
+            <span class="header-spacer"></span>
+            
+
+        </div>
+
+        <div class="card-body">
+
+            <!-- Ideas module -->
+            <mat-divider></mat-divider>
+            <!-- notes -->
+            <!-- <div *ngFor="let note of modblock.notes">
+
+
+                
+            </div> -->
+            <div id="htmlDataForPDF" #htmlDataForPDF>
+            <mat-accordion>
+                <mat-expansion-panel *ngFor="let note of modblock.notes" >
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <span class="note-title-spacer"></span>
+                            <span class="note-header">
+                                {{note.noteTag}}
+                            </span>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <span class="note-details">
+                        {{note.noteDetail}}
+                    </span>
+                    <br>
+                    <br>
+
+                    <div class="note-actions">
+                        <span class="material-icons" (click)="removeNote(note)" matTooltip="delete"
+                            matTooltipClass="tooltip-red" matTooltipPosition="above">
+                            delete_forever
+                        </span>
+                        <span class="action-item-left-spacer"></span>
+                        <span class="material-icons" (click)="editNote(note)" matTooltip="edit"
+                            matTooltipClass="tooltip-indigo" matTooltipPosition="above">
+                            edit
+                        </span>
+
+                    </div>
+                </mat-expansion-panel>
+
+
+            </mat-accordion>
+        </div>
+
+
+
+            <mat-divider></mat-divider>
+            <!--links-->
+
+
+            <mat-divider></mat-divider>
+
+
+
+            <br>
+
+            <br>
+            <!-- End Ideas module -->
+
+        </div>
+        <div class="card-footer text-muted">
+            This panel will show some statistics when we have enough data
+        </div>
+    </div>
+
+
+</div>
